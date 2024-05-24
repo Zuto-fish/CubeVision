@@ -1,7 +1,8 @@
 import cv2
 import numpy as np
 
-def recognize_color(image):
+#TODO
+def recognize_color(image,name="image"):
 # 分割为2*3的6块
     h, w, c = image.shape
     w_block = w // 3
@@ -76,9 +77,6 @@ def recognize_color(image):
 
             # 判断当前块的颜色是否在颜色范围内
             tell_color(avg_color)
-
-    cv2.imshow('image', image)
-    cv2.imwrite('result2.jpg', image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    cv2.imwrite(name+'_result.jpg', image)
+    return image
 
